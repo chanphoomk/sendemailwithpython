@@ -9,7 +9,7 @@ from email.mime.base import MIMEBase
 from email import encoders 
 
 # "EMAIL address of the sender"
-fromaddr = "testmail7489@gmail.com"
+fromaddr = input("What's your Email : ")
 password = input("What's your password : ")
 # "EMAIL address of the receiver"
 # toaddr = ["testmail7489@gmail.com","testmail7489@gmail.com"]
@@ -31,18 +31,17 @@ msg['Subject'] = "Subject of the Mail"
 #  body = "Body_of_the_mail"
 # msg.attach(MIMEText(body, 'plain')) 
 text = """\
-เรียนผู้อำนวยการที่เคารพ,
+Hi,
 
 How are you?
-WE're JMAT Award Team
+
 """
 html = """\
 <html>
   <body>
     <p>Hi,<br>
        How are you?<br>
-       <a href="http://www.realpython.com">Real Python</a> 
-       has many great tutorials.
+       <a href="http://www.google.com">Helloworld</a>
     </p>
   </body>
 </html>
@@ -84,6 +83,8 @@ s.login(fromaddr, password)
 text = msg.as_string() 
 
 # sending the mail 
+
+#sending many mails
 # for i in range(len(receiver)): 
 # x=0
 # while x != len(toaddr):
@@ -91,8 +92,10 @@ text = msg.as_string()
 #     s.sendmail(fromaddr, toaddr[x], text) 
 #     x+=1
 
+#sending single mail
 print(" \n Sender : ", fromaddr)
 s.sendmail(fromaddr, toaddr, text)
+
 print(" \n Successfully Sent!")
 
 # terminating the session 
